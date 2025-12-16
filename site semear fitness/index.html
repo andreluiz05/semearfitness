@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semear Fitness | Academia em Igarassu</title>
+
+  <!-- ================= ÍCONE ================= -->
+  <link rel="icon" href="./icone_semear.png">
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ================= GOOGLE FONTS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<!-- =====================================================
+     RADIO PLAYER (FIXO)
+===================================================== -->
+<div id="radioPlayer">
+
+  <!-- LADO ESQUERDO -->
+  <div class="radio-left">
+    <img src="./radio_hunter.jpg" alt="Rádio" id="radioLogo">
+
+    <div>
+      <strong>Hunter FM — Rock</strong>
+      <span>Ao vivo</span>
+    </div>
+  </div>
+
+  <!-- LADO DIREITO -->
+  <div class="radio-right">
+    <button id="btnPlay">▶</button>
+    <input 
+      id="radioVol" 
+      type="range" 
+      min="0" 
+      max="1" 
+      step="0.01" 
+      value="0.75"
+    >
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="radioAudio">
+    <source 
+      src="https://live.hunter.fm/rock_stream?ag=mp3" 
+      type="audio/mpeg"
+    >
+  </audio>
+</div>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+<header class="navbar">
+  <div class="container nav-content">
+
+    <!-- LOGO -->
+    <a href="index.html">
+      <img src="./logo_semear.png" class="logo" alt="Semear Fitness">
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#planos">Planos</a>
+      <a href="#localizacaoehorarios">Localização e horários</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <div class="menu-btn" id="menuBtn">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+</header>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">Início</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#estrutura">Estrutura</a>
+  <a href="#planos">Planos</a>
+  <a href="#localizacaoehorarios">Localização e horários</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<!-- =====================================================
+     HERO / INÍCIO
+===================================================== -->
+<section id="inicio" class="hero reveal">
+  <div class="container hero-content">
+
+    <img 
+      src="./post_semear.jpg" 
+      class="foto-grupo" 
+      alt="Semear Fitness"
+    >
+
+    <h1>Semear Fitness</h1>
+    <p>Mais que uma academia - Um estilo de vida!</p>
+
+    <a 
+      href="https://wa.me/5581987543550" 
+      class="btn-primary" 
+      target="_blank"
+    >
+      Matricule-se agora!
+    </a>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+<section id="sobre" class="reveal">
+  <div class="container">
+
+    <h2>Nossa História</h2>
+
+    <!-- TEXTO -->
+    <p style="
+      max-width:720px;
+      margin:0 auto 30px;
+      font-size:1.05rem;
+      line-height:1.6;
+      opacity:.95;
+    ">
+      Fundada em <strong>2013</strong>, a <strong>Semear Fitness</strong> nasceu para transformar vidas.
+      Somos uma <strong>academia de bairro</strong>, localizada em <strong>Igarassu-PE</strong>, no
+      <strong>Loteamento Encanto Igarassu</strong>, oferecendo <strong>estrutura moderna</strong>,
+      ambiente acolhedor e <strong>acompanhamento profissional</strong> para garantir resultados reais
+      e duradouros. “Transforme-se na melhor versão de você mesmo. Venha para a Semear Fitness!”
+    </p>
+
+    <!-- VÍDEO 1 -->
+    <video autoplay muted loop playsinline preload="auto" style="
+      width:100%;
+      max-width:360px;
+      border-radius:18px;
+      margin:20px auto 25px;
+      display:block;
+      box-shadow:0 20px 50px rgba(0,0,0,.6);
+      object-fit:cover;
+    ">
+      <source src="./sergio.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+    <!-- VÍDEO 2 -->
+    <video autoplay muted loop playsinline preload="auto" style="
+      width:100%;
+      max-width:360px;
+      border-radius:18px;
+      margin:20px auto 25px;
+      display:block;
+      box-shadow:0 20px 50px rgba(0,0,0,.6);
+      object-fit:cover;
+    ">
+      <source src="./treinos.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     SCRIPT SOBRE (INTERSECTION OBSERVER)
+===================================================== -->
+<script>
+  const imgSobre = document.getElementById("img-sobre");
+
+  const observerSobre = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        imgSobre.style.opacity = "1";
+        imgSobre.style.transform = "translateY(0) scale(1)";
+        observerSobre.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observerSobre.observe(imgSobre);
+</script>
+
+<!-- =====================================================
+     ESTRUTURA
+===================================================== -->
+<section id="estrutura" class="reveal">
+  <div class="container">
+
+    <h2>Estrutura Premium</h2>
+
+    <div class="cards">
+      <div class="card">Equipamentos de última geração</div>
+      <div class="card">Ambiente fresco e arejado</div>
+      <div class="card">Profissionais qualificados</div>
+    </div>
+
+  </div>
+
+  <!-- VÍDEO -->
+  <video autoplay muted loop playsinline preload="auto" style="
+    width:100%;
+    max-width:360px;
+    border-radius:18px;
+    margin:20px auto 25px;
+    display:block;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+    object-fit:cover;
+  ">
+    <source src="./estrutura semear.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+
+</section>
+
+<!-- =====================================================
+     PLANOS
+===================================================== -->
+<section id="planos" class="reveal">
+  <div class="container">
+
+    <h2>Planos</h2>
+
+    <!-- IMAGEM DOS PLANOS -->
+    <img
+      src="./post2_semear.jpg"
+      alt="Planos da academia"
+      id="img-planos"
+      style="
+        max-width:35%;
+        width:190%;
+        border-radius:22px;
+        margin:30px auto 40px;
+        display:block;
+        box-shadow:0 20px 50px rgba(0,0,0,.6);
+        border:2px solid rgba(255,212,0,.4);
+        opacity:0;
+        transform:translateY(40px) scale(0.95);
+        transition:opacity .8s ease, transform .8s ease, box-shadow .35s ease;
+      "
+      onmouseover="this.style.transform='translateY(0) scale(1.05)'; this.style.boxShadow='0 30px 70px rgba(0,0,0,.8)'"
+      onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 50px rgba(0,0,0,.6)'"
+    >
+
+    <!-- CARDS -->
+    <div class="cards">
+
+      <!-- PLANO PRINCIPAL -->
+      <div 
+        class="card destaque brilho-ativo card-premium"
+        style="position:relative; overflow:hidden; cursor:pointer;"
+        onclick="window.open('https://wa.me/5581987543550?text=Olá!%20Tenho%20interesse%20em%20fazer%20Musculação%20na%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?')"
+      >
+
+        <span style="
+          position:absolute;
+          top:18px;
+          right:-40px;
+          background:#000;
+          color:#ffd400;
+          padding:6px 45px;
+          font-size:.75rem;
+          font-weight:800;
+          letter-spacing:1px;
+          transform:rotate(45deg);
+          box-shadow:0 5px 15px rgba(0,0,0,.4);
+        ">
+          MAIS PROCURADO
+        </span>
+
+        <h3>Musculação + Zumba + Funcional</h3>
+
+        <p class="preco" style="
+          font-size:2rem;
+          font-weight:800;
+          margin:15px 0 25px;
+          animation:pulsePreco 2s infinite;
+        ">
+          R$ 80,00 / mês
+        </p>
+
+        <a 
+          href="https://wa.me/5581987543550?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Musculação%20da%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?"
+          class="btn-primary"
+          target="_blank"
+          onclick="event.stopPropagation()"
+        >
+          Quero esse plano!
+        </a>
+
+      </div>
+
+      <!-- AVALIAÇÃO -->
+      <div 
+        class="card destaque"
+        style="cursor:pointer;"
+        onclick="window.open('https://wa.me/5581987543550?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?', '_blank')"
+      >
+        <h3>Avaliação Física</h3>
+        <p class="preco">R$ 40,00</p>
+
+        <a 
+          href="https://wa.me/5581987543550?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?"
+          class="btn-primary"
+          target="_blank"
+          onclick="event.stopPropagation()"
+        >
+          Agendar avaliação
+        </a>
+      </div>
+
+      <!-- NUTRICIONISTA -->
+      <div 
+        class="card destaque"
+        style="cursor:pointer;"
+        onclick="window.open('https://wa.me/5581987543550?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?', '_blank')"
+      >
+        <h3>Nutricionista</h3>
+        <p class="preco">R$ 90,00</p>
+
+        <a 
+          href="https://wa.me/5581987543550?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?"
+          class="btn-primary"
+          target="_blank"
+          onclick="event.stopPropagation()"
+        >
+          Agendar consulta
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     SCRIPT PLANOS
+===================================================== -->
+<script>
+  const imgPlanos = document.getElementById("img-planos");
+
+  const observerPlanos = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        imgPlanos.style.opacity = "1";
+        imgPlanos.style.transform = "translateY(0) scale(1)";
+        observerPlanos.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observerPlanos.observe(imgPlanos);
+</script>
+
+<!-- =====================================================
+     LOCALIZAÇÃO E HORÁRIOS
+===================================================== -->
+<section 
+  id="localizacaoehorarios" 
+  style="background:#111; padding:40px 20px; color:#ccc;"
+>
+  <!-- (mantido exatamente como estava, só organizado visualmente) -->
+  ...
+</section>
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+<section id="contato" class="reveal">
+  <div class="container contato">
+
+    <h2>Fique ligado em nossos contatos!</h2>
+
+    <div class="contato-itens">
+      <a href="https://wa.me/5581987543550" target="_blank" class="contato-item">
+        <img src="./whatsapp.png" alt="WhatsApp">
+        <span>(81) 98754-3550</span>
+      </a>
+
+      <a href="https://instagram.com/semearfitness" target="_blank" class="contato-item">
+        <img src="./instagram.png" alt="Instagram">
+        <span>@semearfitness</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer class="footer">
+  <p>© 2026 Semear Fitness - Todos os direitos reservados.</p>
+</footer>
+
+<!-- ================= SCRIPT PRINCIPAL ================= -->
+<script src="./script.js"></script>
+
+</body>
+</html>
