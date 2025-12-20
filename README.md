@@ -5,7 +5,7 @@ Site institucional desenvolvido para a academia **Semear Fitness**, com foco em 
 ---
 
 ## 🌐 Sobre o Projeto
-Este projeto foi criado utilizando **HTML puro**, **CSS** e JS, sem frameworks ou bibliotecas externas.  
+Este projeto foi criado utilizando **HTML puro**, **CSS** e **JS**, sem frameworks ou bibliotecas externas.  
 O objetivo é oferecer um site leve, rápido e funcional para uma academia local.
 
 ---
