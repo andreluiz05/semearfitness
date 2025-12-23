@@ -22,12 +22,13 @@
   <link rel="icon" href="favicon.ico" sizes="any">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
  <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
 <meta property="og:title" content="Semear Fitness – Academia em Igarassu">
@@ -357,5 +358,6 @@
 <script src="./script.js"></script>
 </body>
 </html>
+
 
 
