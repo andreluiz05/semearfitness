@@ -359,28 +359,29 @@
   </p>
 </footer>
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
+
+<!-- SCRIPT DO PAINEL TEM QUE VIR DEPOIS -->
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 
 <script>
-fetch('/data/home.yml')
-  .then(res => res.text())
-  .then(yaml => {
-    const data = jsyaml.load(yaml)
+  fetch('/data/home.yml')
+    .then(res => res.text())
+    .then(yaml => {
+      const data = jsyaml.load(yaml)
 
-    // HERO
-    document.getElementById('hero-img').src = data.hero_imagem
-    document.getElementById('hero-titulo').innerText = data.hero_titulo
-    document.getElementById('hero-descricao').innerHTML = data.hero_descricao
-    document.getElementById('hero-slogan').innerText = data.hero_slogan
-
-    document.getElementById('hero-whatsapp').href =
-      'https://wa.me/' + data.whatsapp
-
-    // IMAGEM DOS PLANOS
-    document.getElementById('img-planos').src = data.imagem_planos
-  })
+      if (document.getElementById('hero-img')) {
+        document.getElementById('hero-img').src = data.hero_imagem
+        document.getElementById('hero-titulo').innerText = data.hero_titulo
+        document.getElementById('hero-descricao').innerHTML = data.hero_descricao
+        document.getElementById('hero-slogan').innerText = data.hero_slogan
+        document.getElementById('hero-whatsapp').href =
+          'https://wa.me/' + data.whatsapp
+        document.getElementById('img-planos').src = data.imagem_planos
+      }
+    })
 </script>
+</body>
 </body>
 </html>
 
