@@ -130,17 +130,17 @@
 </div>
 
 <!-- ================= HERO ================= -->
-<section id="inicio" class="hero reveal">
-  <div class="container hero-content">
-    <img src="post_semear.webp" class="foto-grupo" alt="Semear Fitness">
-    <h1>Semear Fitness</h1>
-    <p><strong>Academia em Igarassu-PE</strong> com musculação, funcional, zumba, avaliação física e nutricionista.</p>
-    <a href="https://wa.me/558198490142" class="btn-primary" target="_blank">
-      Matricule-se agora! Venha fazer uma aula experimental!
-    </a>
-    <p class="slogan"> Mais que uma academia - Um estilo de vida &#128170;</p>
-  </div>
-</section>
+<img id="hero-img" class="foto-grupo" alt="Semear Fitness">
+
+<h1 id="hero-titulo"></h1>
+
+<p id="hero-descricao"></p>
+
+<a id="hero-whatsapp" class="btn-primary" target="_blank">
+  Matricule-se agora! Venha fazer uma aula experimental!
+</a>
+
+<p class="slogan" id="hero-slogan"></p>
 
 <!-- ================= SOBRE ================= -->
 <section id="sobre" class="reveal">
@@ -359,7 +359,28 @@
   </p>
 </footer>
 
-<script src="./script.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+
+<script>
+fetch('/data/home.yml')
+  .then(res => res.text())
+  .then(yaml => {
+    const data = jsyaml.load(yaml)
+
+    // HERO
+    document.getElementById('hero-img').src = data.hero_imagem
+    document.getElementById('hero-titulo').innerText = data.hero_titulo
+    document.getElementById('hero-descricao').innerHTML = data.hero_descricao
+    document.getElementById('hero-slogan').innerText = data.hero_slogan
+
+    document.getElementById('hero-whatsapp').href =
+      'https://wa.me/' + data.whatsapp
+
+    // IMAGEM DOS PLANOS
+    document.getElementById('img-planos').src = data.imagem_planos
+  })
+</script>
 </body>
 </html>
 
