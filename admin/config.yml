@@ -2,7 +2,6 @@ backend:
   name: github
   repo: andreluiz05/semearfitness
   branch: main
-  base_url: https://semearfitness.com.br
   auth_endpoint: /admin/oauth
 
 site_url: https://dainty-malasada-e77663.netlify.app
