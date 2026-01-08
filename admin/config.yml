@@ -4,9 +4,6 @@ backend:
   branch: main
   auth_endpoint: https://decap-oauth.netlify.app/.netlify/functions/auth
 
-site_url: https://semearfitness.com.br
-display_url: https://semearfitness.com.br
-
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
