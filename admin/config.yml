@@ -2,7 +2,7 @@ backend:
   name: github
   repo: andreluiz05/semearfitness
   branch: main
-  auth_endpoint: /admin/oauth
+  auth_endpoint: https://decap-oauth.netlify.app/.netlify/functions/auth
 
 site_url: https://semearfitness.com.br
 display_url: https://semearfitness.com.br
