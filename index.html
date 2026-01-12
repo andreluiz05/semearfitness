@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <title>Semear Fitness | Academia em Igarassu-PE</title>
   <meta name="description" content="Academia em Igarassu-PE com Musculação, funcional, zumba, avaliação física e nutricionista. Treine perto de você 👊">
   <meta name="author" content="Semear Fitness">
   <meta name="robots" content="index, follow">
-
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-
   <link rel="canonical" href="https://semearfitness.com.br/">
+
+  <meta property="og:title" content="Semear Fitness – Academia em Igarassu">
+  <meta property="og:description" content="Musculação e treino funcional em ambiente arejado, com acompanhamento profissional e planos acessíveis. Venha treinar.">
+  <meta property="og:image" content="https://semearfitness.com.br/og-image.jpg">
+  <meta property="og:url" content="https://semearfitness.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Semear Fitness">
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="256x256" href="/icon-256.png">
@@ -21,17 +26,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="style.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-  <meta property="og:title" content="Semear Fitness – Academia em Igarassu">
-  <meta property="og:description" content="Musculação e treino funcional em ambiente arejado, com acompanhamento profissional e planos acessíveis. Venha treinar.">
-  <meta property="og:image" content="https://semearfitness.com.br/og-image.jpg">
-  <meta property="og:url" content="https://semearfitness.com.br/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Semear Fitness">
 
   <script type="application/ld+json">
   {
@@ -72,317 +69,237 @@
 
     gtag('config', 'AW-17815031095');
   </script>
-
   <script>
     gtag('event', 'conversion', {'send_to': 'AW-17815031095/k8P4CLDml9QbELea765C'});
   </script>
 </head>
+
 <body>
 
-<div id="radioPlayer">
-  <div class="radio-left">
-    <img src="radio_hunter.webp" alt="Rádio" id="radioLogo">
-    <div>
-      <strong>Hunter FM — Rock </strong>
-      <span>Ao vivo</span>
+  <div id="radioPlayer">
+    <div class="radio-left">
+      <img src="radio_hunter.webp" alt="Rádio" id="radioLogo">
+      <div>
+        <strong>Hunter FM — Rock </strong>
+        <span>Ao vivo</span>
+      </div>
     </div>
-  </div>
 
-  <div class="radio-right">
-    <button id="btnPlay">▶</button>
-    <input id="radioVol" type="range" min="0" max="1" step="0.01" value="0.75">
-  </div>
-
-  <audio id="radioAudio">
-    <source src="https://live.hunter.fm/rock_stream?ag=mp3" type="audio/mpeg">
-  </audio>
-</div>
-
-<header class="navbar">
-  <div class="container nav-content">
-    <a href="https://semearfitness.com.br">
-      <img src="logo_semear.webp" class="logo academia Igarassu" alt="Semear Fitness">
-    </a>
-
-    <nav class="menu">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#estrutura">Estrutura</a>
-      <a href="#planos">Planos</a>
-      <a href="#localizacaoehorarios">Localização e horários</a>
-      <a href="#contato">Contato</a>
-    </nav>
-
-    <div class="menu-btn" id="menuBtn">
-      <div></div><div></div><div></div>
+    <div class="radio-right">
+      <button id="btnPlay">▶</button>
+      <input id="radioVol" type="range" min="0" max="1" step="0.01" value="0.75">
     </div>
+
+    <audio id="radioAudio">
+      <source src="https://live.hunter.fm/rock_stream?ag=mp3" type="audio/mpeg">
+    </audio>
   </div>
-</header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#inicio">Início</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#estrutura">Estrutura</a>
-  <a href="#planos">Planos</a>
-  <a href="#localizacaoehorarios">Localização e horários</a>
-  <a href="#contato">Contato</a>
-</div>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="https://semearfitness.com.br">
+        <img src="logo_semear.webp" class="logo academia Igarassu" alt="Semear Fitness">
+      </a>
 
-<section id="inicio" class="hero reveal">
-  <div class="container hero-content">
+      <nav class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#estrutura">Estrutura</a>
+        <a href="#planos">Planos</a>
+        <a href="#localizacaoehorarios">Localização e horários</a>
+        <a href="#contato">Contato</a>
+      </nav>
 
-    <img
-      id="hero-img"
-      class="foto-grupo"
-      src="post_semear.webp"
-      alt="Semear Fitness"
-    >
-
-    <h1 id="hero-titulo">Semear Fitness</h1>
-
-    <p id="hero-descricao">
-      <strong>Academia em Igarassu-PE</strong> com musculação, funcional,
-      zumba, avaliação física e nutricionista.
-    </p>
-
-    <a
-      id="hero-whatsapp"
-      class="btn-primary"
-      target="_blank"
-      href="https://wa.me/558198490142"
-    >
-      Matricule-se agora! Venha fazer uma aula experimental!
-    </a>
-
-    <p class="slogan" id="hero-slogan">
-      Mais que uma academia - Um estilo de vida 💪
-    </p>
-
-  </div>
-</section>
-<section id="sobre" class="reveal">
-  <div class="container">
-    <h2>Nossa História</h2>
-
-    <p class="sobre-texto">
-      Fundada em <strong>2011</strong>, a <strong>Semear Fitness</strong> nasceu para transformar vidas.
-      Somos uma <strong>academia</strong>, localizada em <strong>Igarassu-PE</strong>, no
-      <strong>Loteamento Encanto Igarassu</strong>, oferecendo <strong>estrutura moderna</strong>,
-      ambiente acolhedor e <strong>acompanhamento profissional</strong> para garantir resultados reais
-      e duradouros. “Transforme-se na melhor versão de você mesmo. Venha para a Semear Fitness!”
-    </p>
-
-    <video autoplay muted loop playsinline preload="auto" class="video-sobre">
-      <source src="sergio.mp4" type="video/mp4">
-    </video>
-
-    <video autoplay muted loop playsinline preload="auto" class="video-sobre">
-      <source src="treinos.mp4" type="video/mp4">
-    </video>
-
-  </div>
-</section>
-
-<section id="estrutura" class="reveal">
-  <div class="container">
-    <h2>Estrutura Premium</h2>
-
-    <div class="cards">
-      <div class="card">Equipamentos de última geração</div>
-      <div class="card">Ambiente fresco e arejado</div>
-      <div class="card">Profissionais qualificados</div>
+      <div class="menu-btn" id="menuBtn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#planos">Planos</a>
+    <a href="#localizacaoehorarios">Localização e horários</a>
+    <a href="#contato">Contato</a>
   </div>
 
-  <video autoplay muted loop playsinline preload="auto" class="video-estrutura">
-    <source src="estrutura semear.mp4" type="video/mp4">
-  </video>
-</section>
-
-<section id="planos" class="reveal">
-  <div class="container">
-    <h2>Planos</h2>
-
-    <img 
-      src="post2_semear.webp"
-      loading="lazy"
-      alt="Planos da academia"
-      id="img-planos"
-      class="img-planos"
-    />
-
-    <div class="cards">
-
-      <div class="card destaque brilho-ativo card-premium card-click"
-           onclick="window.open('https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20fazer%20Musculação%20na%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?')">
-
-        <span class="selo-premium">MAIS PROCURADO</span>
-
-        <h3>Musculação + Zumba + Funcional</h3>
-
-        <p class="preco preco-destaque">
-          R$ 80,00 / mês
+  <main>
+    <section id="inicio" class="hero reveal">
+      <div class="container hero-content">
+        <img id="hero-img" class="foto-grupo" src="post_semear.webp" alt="Semear Fitness">
+        
+        <h1 id="hero-titulo">Semear Fitness</h1>
+        
+        <p id="hero-descricao">
+          <strong>Academia em Igarassu-PE</strong> com musculação, funcional,
+          zumba, avaliação física e nutricionista.
         </p>
 
-        <a href="https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Musculação%20da%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?"
-           class="btn-primary"
-           target="_blank"
-           onclick="event.stopPropagation()">
-          Quero esse plano!
+        <a id="hero-whatsapp" class="btn-primary" target="_blank" href="https://wa.me/558198490142">
+          Matricule-se agora! Venha fazer uma aula experimental!
         </a>
+
+        <p class="slogan" id="hero-slogan">
+          Mais que uma academia - Um estilo de vida 💪
+        </p>
       </div>
+    </section>
 
-      <div class="card destaque card-click"
-           onclick="window.open('https://wa.me/558198490142?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?', '_blank')">
+    <section id="sobre" class="reveal">
+      <div class="container">
+        <h2>Nossa História</h2>
+        <p class="sobre-texto">
+          Fundada em <strong>2011</strong>, a <strong>Semear Fitness</strong> nasceu para transformar vidas.
+          Somos uma <strong>academia</strong>, localizada em <strong>Igarassu-PE</strong>, no
+          <strong>Loteamento Encanto Igarassu</strong>, oferecendo <strong>estrutura moderna</strong>,
+          ambiente acolhedor e <strong>acompanhamento profissional</strong> para garantir resultados reais
+          e duradouros. “Transforme-se na melhor versão de você mesmo. Venha para a Semear Fitness!”
+        </p>
 
-        <h3>Avaliação Física</h3>
-        <p class="preco">R$ 40,00</p>
+        <video autoplay muted loop playsinline preload="auto" class="video-sobre">
+          <source src="sergio.mp4" type="video/mp4">
+        </video>
 
-        <a href="https://wa.me/558198490142?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?"
-           class="btn-primary"
-           target="_blank"
-           onclick="event.stopPropagation()">
-          Agendar avaliação
-        </a>
+        <video autoplay muted loop playsinline preload="auto" class="video-sobre">
+          <source src="treinos.mp4" type="video/mp4">
+        </video>
       </div>
+    </section>
 
-      <div class="card destaque card-click"
-           onclick="window.open('https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?', '_blank')">
-
-        <h3>Nutricionista</h3>
-        <p class="preco">R$ 90,00</p>
-
-        <a href="https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?"
-           class="btn-primary"
-           target="_blank"
-           onclick="event.stopPropagation()">
-          Agendar consulta
-        </a>
+    <section id="estrutura" class="reveal">
+      <div class="container">
+        <h2>Estrutura Premium</h2>
+        <div class="cards">
+          <div class="card">Equipamentos de última geração</div>
+          <div class="card">Ambiente fresco e arejado</div>
+          <div class="card">Profissionais qualificados</div>
+        </div>
       </div>
+      
+      <video autoplay muted loop playsinline preload="auto" class="video-estrutura">
+        <source src="estrutura semear.mp4" type="video/mp4">
+      </video>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <section id="planos" class="reveal">
+      <div class="container">
+        <h2>Planos</h2>
+        
+        <img src="post2_semear.webp" loading="lazy" alt="Planos da academia" id="img-planos" class="img-planos">
 
-<script>
-  const imgPlanos = document.getElementById("img-planos");
+        <div class="cards">
+          <div class="card destaque brilho-ativo card-premium card-click" onclick="window.open('https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20fazer%20Musculação%20na%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?')">
+            <span class="selo-premium">MAIS PROCURADO</span>
+            <h3>Musculação + Zumba + Funcional</h3>
+            <p class="preco preco-destaque">R$ 80,00 / mês</p>
+            <a href="https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20Musculação%20da%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?" class="btn-primary" target="_blank" onclick="event.stopPropagation()">
+              Quero esse plano!
+            </a>
+          </div>
 
-  const observerPlanos = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        imgPlanos.classList.add("reveal-active");
-        observerPlanos.disconnect();
-      }
-    });
-  }, { threshold: 0.4 });
+          <div class="card destaque card-click" onclick="window.open('https://wa.me/558198490142?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?', '_blank')">
+            <h3>Avaliação Física</h3>
+            <p class="preco">R$ 40,00</p>
+            <a href="https://wa.me/558198490142?text=Olá!%20Gostaria%20de%20agendar%20uma%20Avaliação%20Física%20na%20Semear%20Fitness.%20Como%20funciona?" class="btn-primary" target="_blank" onclick="event.stopPropagation()">
+              Agendar avaliação
+            </a>
+          </div>
 
-  observerPlanos.observe(imgPlanos);
-</script>
+          <div class="card destaque card-click" onclick="window.open('https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?', '_blank')">
+            <h3>Nutricionista</h3>
+            <p class="preco">R$ 90,00</p>
+            <a href="https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20consulta%20com%20o%20Nutricionista%20da%20Semear%20Fitness.%20Pode%20me%20explicar%20como%20funciona?" class="btn-primary" target="_blank" onclick="event.stopPropagation()">
+              Agendar consulta
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="localizacaoehorarios" class="localizacao">
+    <section id="localizacaoehorarios" class="localizacao">
+      <div class="localizacao-container">
+        <div class="localizacao-col">
+          <h3 class="localizacao-titulo">📍 Localização</h3>
+          <address class="localizacao-endereco">
+            Rua Tente Esquecer, 17 – Encanto Igarassu<br>
+            Igarassu – PE<br>
+            CEP 53620-095
+          </address>
+          <a href="https://maps.app.goo.gl/1xQFSJYZhMzyMteJ9" target="_blank" rel="noopener" class="localizacao-link">
+            Como chegar?
+          </a>
+          <iframe class="localizacao-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0947048125715!2d-34.903553099999996!3d-7.8553636000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab152bcfca6407%3A0xfc1c9a59c9976f37!2sSemear%20Fitness!5e0!3m2!1spt-BR!2sbr!4v1765892867287!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
 
-  <div class="localizacao-container">
+        <div class="localizacao-col">
+          <h3 class="localizacao-titulo">🕒 Horários de Funcionamento</h3>
+          <p class="localizacao-horarios">
+            Segunda a Sexta: 05h às 21h<br>
+            Sábado: 08h às 11h<br>
+            Domingo: Fechado
+          </p>
+          <img src="horario.webp" loading="lazy" alt="Horários de funcionamento" class="localizacao-img">
+        </div>
+      </div>
+    </section>
 
-    <div class="localizacao-col">
+    <section id="contato" class="reveal">
+      <div class="container contato">
+        <h2>Fique ligado em nossos contatos!</h2>
+        <div class="contato-itens">
+          <a href="https://wa.me/558198490142" target="_blank" class="contato-item">
+            <img src="whatsapp.webp" alt="WhatsApp">
+            <span>(81) 99849-0142</span>
+          </a>
+          <a href="https://instagram.com/semearfitness" target="_blank" class="contato-item">
+            <img src="instagram.webp" alt="Instagram">
+            <span>@semearfitness</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <h3 class="localizacao-titulo">
-        📍 Localização
-      </h3>
+  <footer class="footer">
+    <p>© 2026 Semear Fitness - Todos os direitos reservados.</p>
+    <p><a href="politica-de-privacidade.html">Política de Privacidade</a></p>
+  </footer>
 
-      <address class="localizacao-endereco">
-        Rua Tente Esquecer, 17 – Encanto Igarassu<br>
-        Igarassu – PE<br>
-        CEP 53620-095
-      </address>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 
-      <a
-        href="https://maps.app.goo.gl/1xQFSJYZhMzyMteJ9"
-        target="_blank"
-        rel="noopener"
-        class="localizacao-link"
-      >
-        Como chegar?
-      </a>
+  <script>
+    const imgPlanos = document.getElementById("img-planos");
+    const observerPlanos = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          imgPlanos.classList.add("reveal-active");
+          observerPlanos.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    observerPlanos.observe(imgPlanos);
+  </script>
 
-      <iframe
-        class="localizacao-mapa"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0947048125715!2d-34.903553099999996!3d-7.8553636000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab152bcfca6407%3A0xfc1c9a59c9976f37!2sSemear%20Fitness!5e0!3m2!1spt-BR!2sbr!4v1765892867287!5m2!1spt-BR!2sbr"
-        loading="lazy"
-        allowfullscreen
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-
-    </div>
-
-    <div class="localizacao-col">
-
-      <h3 class="localizacao-titulo">
-        🕒 Horários de Funcionamento
-      </h3>
-
-      <p class="localizacao-horarios">
-        Segunda a Sexta: 05h às 21h<br>
-        Sábado: 08h às 11h<br>
-        Domingo: Fechado
-      </p>
-
-      <img
-        src="horario.webp"
-        loading="lazy"
-        alt="Horários de funcionamento"
-        class="localizacao-img"
-      >
-    </div>
-
-  </div>
-
-</section>
-
-<section id="contato" class="reveal">
-  <div class="container contato">
-    <h2>Fique ligado em nossos contatos!</h2>
-
-    <div class="contato-itens">
-      <a href="https://wa.me/558198490142" target="_blank" class="contato-item">
-        <img src="whatsapp.webp" alt="WhatsApp">
-        <span>(81) 99849-0142</span>
-      </a>
-
-      <a href="https://instagram.com/semearfitness" target="_blank" class="contato-item">
-        <img src="instagram.webp" alt="Instagram">
-        <span>@semearfitness</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <p>© 2026 Semear Fitness - Todos os direitos reservados.</p>
-  <p>
-    <a href="politica-de-privacidade.html">Política de Privacidade</a>
-  </p>
-</footer>
-
-<script src="./script.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
-
-<script>
-  fetch('/data/home.yml')
-    .then(res => res.text())
-    .then(yaml => {
-      const data = jsyaml.load(yaml)
-
-      if (document.getElementById('hero-img')) {
-        document.getElementById('hero-img').src = data.hero_imagem
-        document.getElementById('hero-titulo').innerText = data.hero_titulo
-        document.getElementById('hero-descricao').innerHTML = data.hero_descricao
-        document.getElementById('hero-slogan').innerText = data.hero_slogan
-        document.getElementById('hero-whatsapp').href =
-          'https://wa.me/' + data.whatsapp
-        document.getElementById('img-planos').src = data.imagem_planos
-      }
-    })
-</script>
+  <script>
+    fetch('/data/home.yml')
+      .then(res => res.text())
+      .then(yaml => {
+        const data = jsyaml.load(yaml)
+        if (document.getElementById('hero-img')) {
+          document.getElementById('hero-img').src = data.hero_imagem
+          document.getElementById('hero-titulo').innerText = data.hero_titulo
+          document.getElementById('hero-descricao').innerHTML = data.hero_descricao
+          document.getElementById('hero-slogan').innerText = data.hero_slogan
+          document.getElementById('hero-whatsapp').href = 'https://wa.me/' + data.whatsapp
+          document.getElementById('img-planos').src = data.imagem_planos
+        }
+      })
+  </script>
 </body>
 </html>
