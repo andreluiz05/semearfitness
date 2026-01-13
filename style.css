@@ -544,166 +544,192 @@ h2 {
 }
 
 /* =====================================================
-   responsivo mobile (consolidado)
+   responsivo mobile (lapidado para ux)
 ===================================================== */
 @media (max-width: 768px) {
-  /* estrutura base */
+  
+  /* ajuste de estrutura e scroll */
   body {
-    padding-top: 80px;
-    padding-bottom: 110px;
+    padding-top: 70px; /* navbar menor no mobile */
+    padding-bottom: 140px; /* espaco extra para o player */
   }
-  
+
   section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
-  
-  /* navbar */
+
+  .container {
+    width: 92%; /* aproveita mais a lateral */
+  }
+
+  /* navbar e menu */
   .logo {
-    width: 60px;
+    width: 55px;
   }
-  
+
   .menu {
     display: none;
   }
-  
+
   .menu-btn {
     display: flex;
+    padding: 10px; /* aumenta area de toque */
   }
-  
-  /* hero */
+
+  /* menu mobile mais clean */
+  .mobile-menu {
+    top: 70px;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 212, 0, 0.2);
+    padding: 10px 0;
+  }
+
+  .mobile-menu a {
+    padding: 18px 0; /* area de toque maior */
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* hero section otimizada */
   .hero {
-    padding-top: 40px;
+    padding-top: 20px;
+    min-height: 100dvh; /* dvh evita pulo da barra de endereco */
+    align-items: flex-start; /* evita cortar conteudo */
   }
-  
+
+  .hero-content {
+    margin-top: 40px;
+  }
+
+  .foto-grupo {
+    width: 90%;
+    max-width: 280px;
+    margin-top: 0; /* remove margem negativa que quebra layout mobile */
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
   /* textos e videos */
   .sobre-texto {
-    margin-bottom: 24px;
     font-size: 1rem;
-    line-height: 1.65;
+    text-align: justify; /* melhor leitura em blocos */
+    padding: 0 5px;
   }
-  
-  .video-sobre {
-    max-width: 90%;
-    margin-bottom: 22px;
-  }
-  
+
+  .video-sobre,
   .video-estrutura {
-    max-width: 95%;
-    margin-bottom: 26px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border-radius: 16px;
   }
-  
+
   .img-planos {
-    max-width: 92%;
-    margin-bottom: 32px;
-    border-radius: 22px;
+    max-width: 100%;
+    border-radius: 16px;
   }
-  
-  /* cards e precos */
+
+  /* cards e grid */
   .cards {
-    gap: 20px;
+    grid-template-columns: 1fr; /* forca coluna unica */
+    gap: 25px;
+    padding: 0 10px;
   }
-  
+
   .card {
-    padding: 28px;
+    padding: 30px 20px;
   }
-  
-  .card:hover {
-    transform: none;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  }
-  
-  .card-click {
-    border-radius: 18px;
-  }
-  
-  .card-click:hover {
-    transform: none;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
-  }
-  
-  .selo-premium {
-    top: 14px;
-    right: -52px;
-    font-size: 0.7rem;
-    padding: 6px 48px;
-  }
-  
-  .preco {
-    font-size: 1.4rem;
-  }
-  
-  .preco-destaque {
-    font-size: 1.8rem;
-    margin-bottom: 22px;
-  }
-  
-  /* botoes */
-  .btn-primary,
-  .btn-whatsapp {
-    padding: 14px 26px;
-    font-size: 0.95rem;
-  }
-  
-  /* localizacao */
-  .localizacao {
-    padding: 50px 16px;
-  }
-  
-  .localizacao-container {
-    gap: 30px;
-  }
-  
-  .localizacao-col {
-    text-align: center;
-  }
-  
-  .localizacao-link {
-    margin-bottom: 22px;
-  }
-  
-  .localizacao-mapa {
-    height: 220px;
-  }
-  
-  .localizacao-img {
-    margin: 14px auto 0;
-  }
-  
-  /* contato */
-  .contato-itens {
-    gap: 20px;
-  }
-  
-  .contato-item {
-    padding: 14px 22px;
-    border-radius: 30px;
-  }
-  
+
+  /* remove hover no touch devices */
+  .card:hover, 
+  .card-click:hover,
   .contato-item:hover {
     transform: none;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
   }
-  
-  .contato-item img {
-    width: 28px;
-    height: 28px;
+
+  /* selo premium ajustado */
+  .selo-premium {
+    top: 15px;
+    right: -45px;
+    font-size: 0.65rem;
+    padding: 5px 40px;
   }
-  
-  /* radio */
-  #radioPlayer {
-    flex-direction: column;
-    gap: 12px;
+
+  /* botoes full width para facilitar o clique */
+  .btn-primary,
+  .btn-whatsapp {
+    display: block;
+    width: 100%;
     text-align: center;
+    padding: 16px;
   }
-  
+
+  /* localizacao */
+  .localizacao {
+    padding: 40px 15px;
+  }
+
+  .localizacao-mapa {
+    height: 250px; /* mapa maior para facilitar toque */
+  }
+
+  /* contato */
+  .contato-itens {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contato-item {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  /* radio player ergonomico */
+  #radioPlayer {
+    flex-direction: row; /* mantem linha para economizar altura */
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .radio-left {
+    width: auto;
+    max-width: 60%;
+  }
+
+  .radio-left div span {
+    display: none; /* esconde 'ao vivo' para economizar espaco */
+  }
+
+  .radio-right {
+    width: auto;
+    gap: 15px;
+  }
+
+  /* slider de volume maior para o dedo */
+  #radioVol {
+    width: 80px;
+    height: 20px; /* area de toque maior */
+  }
+
   #btnPlay {
-    width: 52px;
-    height: 52px;
+    width: 42px;
+    height: 42px;
   }
-  
-  /* animacoes */
+
+  /* animacoes simplificadas */
   .reveal {
-    transform: translateY(30px);
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 }
 
@@ -714,7 +740,7 @@ h2 {
   .card-premium {
     animation: none;
   }
-  
+
   .card-premium::before,
   .card-premium::after {
     animation: none;
