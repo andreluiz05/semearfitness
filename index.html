@@ -78,7 +78,15 @@
 
   <div id="radioPlayer">
     <div class="radio-left">
-      <img src="radio_hunter.webp" alt="Rádio" id="radioLogo">
+      <img 
+        src="radio_hunter.webp" 
+        alt="Logo da Rádio Hunter FM" 
+        id="radioLogo" 
+        width="45" 
+        height="45" 
+        loading="eager" 
+        fetchpriority="high"
+      >
       <div>
         <strong>Hunter FM — Rock </strong>
         <span>Ao vivo</span>
@@ -86,7 +94,8 @@
     </div>
 
     <div class="radio-right">
-      <button id="btnPlay">▶</button>
+      <button id="btnPlay" aria-label="Reproduzir ou pausar rádio">▶</button>
+      
       <input id="radioVol" type="range" min="0" max="1" step="0.01" value="0.75" aria-label="Volume do player">
     </div>
 
