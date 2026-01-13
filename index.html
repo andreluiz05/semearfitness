@@ -12,10 +12,6 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://semearfitness.com.br/">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
   <meta property="og:title" content="Semear Fitness – Academia em Igarassu">
   <meta property="og:description" content="Musculação e treino funcional em ambiente arejado, com acompanhamento profissional e planos acessíveis. Venha treinar.">
   <meta property="og:image" content="https://semearfitness.com.br/og-image.jpg">
@@ -24,12 +20,15 @@
   <meta property="og:site_name" content="Semear Fitness">
 
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="256x256" href="/icon-256.png?v=2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=2">
-  <link rel="icon" type="image/png" sizes="128x128" href="/icon-128.png?v=2">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="256x256" href="/icon-256.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" type="image/png" sizes="128x128" href="/icon-128.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -67,6 +66,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'AW-17815031095');
   </script>
   <script>
@@ -78,7 +78,7 @@
 
   <div id="radioPlayer">
     <div class="radio-left">
-      <img src="radio_hunter.webp" alt="Rádio" id="radioLogo" width="45" height="45">
+      <img src="radio_hunter.webp" alt="Rádio" id="radioLogo">
       <div>
         <strong>Hunter FM — Rock </strong>
         <span>Ao vivo</span>
@@ -98,7 +98,7 @@
   <header class="navbar">
     <div class="container nav-content">
       <a href="https://semearfitness.com.br">
-        <img src="logo_semear.webp" class="logo academia Igarassu" alt="Semear Fitness" width="1024" height="1024">
+        <img src="logo_semear.webp" class="logo academia Igarassu" alt="Semear Fitness">
       </a>
 
       <nav class="menu">
@@ -130,10 +130,10 @@
   <main>
     <section id="inicio" class="hero reveal">
       <div class="container hero-content">
-        <img id="hero-img" class="foto-grupo" src="post_semear.webp" alt="Semear Fitness" width="320" height="320">
-
+        <img id="hero-img" class="foto-grupo" src="post_semear.webp" alt="Semear Fitness">
+        
         <h1 id="hero-titulo">Semear Fitness</h1>
-
+        
         <p id="hero-descricao">
           <strong>Academia em Igarassu-PE</strong> com musculação, funcional,
           zumba, avaliação física e nutricionista.
@@ -159,12 +159,12 @@
           ambiente acolhedor e <strong>acompanhamento profissional</strong> para garantir resultados reais
           e duradouros. “Transforme-se na melhor versão de você mesmo. Venha para a Semear Fitness!”
         </p>
-        
-        <video autoplay muted loop playsinline preload="none" class="video-sobre">
+
+        <video autoplay muted loop playsinline preload="auto" class="video-sobre">
           <source src="sergio.mp4" type="video/mp4">
         </video>
 
-        <video autoplay muted loop playsinline preload="none" class="video-sobre">
+        <video autoplay muted loop playsinline preload="auto" class="video-sobre">
           <source src="treinos.mp4" type="video/mp4">
         </video>
       </div>
@@ -179,8 +179,8 @@
           <div class="card">Profissionais qualificados</div>
         </div>
       </div>
-
-      <video autoplay muted loop playsinline preload="none" class="video-estrutura">
+      
+      <video autoplay muted loop playsinline preload="auto" class="video-estrutura">
         <source src="estrutura semear.mp4" type="video/mp4">
       </video>
     </section>
@@ -188,8 +188,8 @@
     <section id="planos" class="reveal">
       <div class="container">
         <h2>Planos</h2>
-
-        <img src="post2_semear.webp" loading="lazy" alt="Planos da academia" id="img-planos" class="img-planos" width="864" height="667">
+        
+        <img src="post2_semear.webp" loading="lazy" alt="Planos da academia" id="img-planos" class="img-planos">
 
         <div class="cards">
           <div class="card destaque brilho-ativo card-premium card-click" onclick="window.open('https://wa.me/558198490142?text=Olá!%20Tenho%20interesse%20em%20fazer%20Musculação%20na%20Semear%20Fitness.%20Pode%20me%20passar%20mais%20informações?')">
@@ -232,7 +232,7 @@
           <a href="https://maps.app.goo.gl/1xQFSJYZhMzyMteJ9" target="_blank" rel="noopener" class="localizacao-link">
             Como chegar?
           </a>
-          <iframe class="localizacao-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0947048125715!2d-34.903553099999996!3d-7.8553636000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab152bcfca6407%3A0xfc1c9a59c9976f37!2sSemear%20Fitness!5e0!3m2!1spt-BR!2sbr!4v1765892867287!5m2!1spt-BR!2sbr" width="100%" height="240" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+          <iframe class="localizacao-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.0947048125715!2d-34.903553099999996!3d-7.8553636000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab152bcfca6407%3A0xfc1c9a59c9976f37!2sSemear%20Fitness!5e0!3m2!1spt-BR!2sbr!4v1765892867287!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
 
@@ -243,7 +243,7 @@
             Sábado: 08h às 11h<br>
             Domingo: Fechado
           </p>
-          <img src="horario.webp" loading="lazy" alt="Horários de funcionamento" class="localizacao-img" width="406" height="531">
+          <img src="horario.webp" loading="lazy" alt="Horários de funcionamento" class="localizacao-img">
         </div>
       </div>
     </section>
@@ -253,11 +253,11 @@
         <h2>Fique ligado em nossos contatos!</h2>
         <div class="contato-itens">
           <a href="https://wa.me/558198490142" target="_blank" class="contato-item">
-            <img src="whatsapp.webp" alt="WhatsApp" width="30" height="30">
+            <img src="whatsapp.webp" alt="WhatsApp">
             <span>(81) 99849-0142</span>
           </a>
           <a href="https://instagram.com/semearfitness" target="_blank" class="contato-item">
-            <img src="instagram.webp" alt="Instagram" width="30" height="30">
+            <img src="instagram.webp" alt="Instagram">
             <span>@semearfitness</span>
           </a>
         </div>
