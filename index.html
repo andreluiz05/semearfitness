@@ -272,35 +272,30 @@ title="Mapa de localização da Academia Semear Fitness" loading="lazy" allowful
   </footer>
 
   <script src="./script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
 
   <script>
-    const imgPlanos = document.getElementById("img-planos");
-    const observerPlanos = new IntersectionObserver(entries => {
+    // --- SCRIPT OTIMIZADO (FAZ TUDO SOZINHO) ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', 
+      threshold: 0.1 // Ativa rápido (10%)
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          imgPlanos.classList.add("reveal-active");
-          observerPlanos.disconnect();
+          entry.target.classList.add("reveal-active");
+          obs.unobserve(entry.target); // Limpa memória
         }
       });
-    }, { threshold: 0.4 });
-    observerPlanos.observe(imgPlanos);
-  </script>
+    }, observerOptions);
 
-  <!-- <script>
-    fetch('/data/home.yml')
-      .then(res => res.text())
-      .then(yaml => {
-        const data = jsyaml.load(yaml)
-        if (document.getElementById('hero-img')) {
-          document.getElementById('hero-img').src = data.hero_imagem
-          document.getElementById('hero-titulo').innerText = data.hero_titulo
-          document.getElementById('hero-descricao').innerHTML = data.hero_descricao
-          document.getElementById('hero-slogan').innerText = data.hero_slogan
-          document.getElementById('hero-whatsapp').href = 'https://wa.me/' + data.whatsapp
-          document.getElementById('img-planos').src = data.imagem_planos
-        }
-      })
-  </script> -->
+    // Seleciona TUDO de uma vez (.reveal E a imagem dos planos)
+    const elementsToAnimate = document.querySelectorAll('.reveal, #img-planos');
+    
+    elementsToAnimate.forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
