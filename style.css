@@ -8,11 +8,16 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth; /* Rolagem suave nos links do menu */
+}
+
 body {
   background: radial-gradient(circle at top, #111, #000);
   color: #fff;
   padding-top: 90px;
   padding-bottom: 120px;
+  overflow-x: hidden; /* Evita rolagem lateral indesejada */
 }
 
 .container {
@@ -22,7 +27,7 @@ body {
 }
 
 section {
-  padding: 90px 0;
+  padding: 80px 0; /* Reduzi levemente para parecer mais ágil */
 }
 
 h2 {
@@ -41,6 +46,8 @@ h2 {
   z-index: 1000;
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(6px);
+  /* ⚡ OTIMIZADO: Evita repaints no scroll */
+  will-change: transform; 
 }
 
 .nav-content {
@@ -52,6 +59,8 @@ h2 {
 
 .logo {
   width: 70px;
+  /* ⚡ OTIMIZADO: Renderização fixa */
+  transform: translateZ(0); 
 }
 
 .menu a {
@@ -142,6 +151,8 @@ h2 {
   margin-bottom: 25px;
   border-radius: 18px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  /* ⚡ OTIMIZADO: Prioriza carregamento visual */
+  content-visibility: auto; 
 }
 
 /* =====================================================
@@ -156,7 +167,8 @@ h2 {
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* ⚡ Mais rápido */
+  will-change: transform;
 }
 
 .btn-primary:hover,
@@ -180,7 +192,8 @@ h2 {
   text-align: center;
   border-radius: 18px;
   border: 1px solid rgba(255, 212, 0, 0.3);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease; /* ⚡ Curva de animação mais fluida */
+  will-change: transform; /* ⚡ Prepara GPU */
 }
 
 .card:hover {
@@ -198,7 +211,7 @@ h2 {
   overflow: hidden;
   cursor: pointer;
   border-radius: 22px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-click:hover {
@@ -238,6 +251,7 @@ h2 {
   position: relative;
   animation: premiumPulse 3s infinite ease-in-out;
   box-shadow: 0 0 0 rgba(255, 212, 0, 0), 0 25px 60px rgba(0, 0, 0, 0.6);
+  will-change: transform; /* ⚡ Ajuda na animação infinita */
 }
 
 .card-premium::before {
@@ -248,6 +262,7 @@ h2 {
   transform: translateX(-100%);
   animation: premiumShine 2.8s infinite;
   pointer-events: none;
+  will-change: transform; /* ⚡ Otimização do brilho */
 }
 
 .card-premium::after {
@@ -262,7 +277,7 @@ h2 {
 }
 
 /* =====================================================
-   elementos especificos (sobre, estrutura, planos)
+   elementos especificos
 ===================================================== */
 .sobre-texto {
   max-width: 720px;
@@ -273,7 +288,8 @@ h2 {
   text-align: center;
 }
 
-.video-sobre {
+.video-sobre,
+.video-estrutura {
   width: 100%;
   max-width: 380px;
   aspect-ratio: 9 / 16;
@@ -282,17 +298,7 @@ h2 {
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
-}
-
-.video-estrutura {
-  width: 100%;
-  max-width: 380px;
-  aspect-ratio: 9 / 16;
-  margin: 22px auto 32px;
-  display: block;
-  object-fit: cover;
-  border-radius: 22px;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6);
+  background: #000; /* Evita flash branco antes de carregar */
 }
 
 .img-planos {
@@ -304,10 +310,12 @@ h2 {
   border-radius: 26px;
   border: 2px solid rgba(255, 212, 0, 0.45);
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
-  /* animacao */
+  
+  /* ⚡ OTIMIZADO: Transição mais rápida (0.6s) */
   opacity: 0;
-  transform: translateY(40px) scale(0.94);
-  transition: opacity 0.9s ease, transform 0.9s ease, box-shadow 0.35s ease;
+  transform: translateY(30px) scale(0.96);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
 .img-planos.reveal-active {
@@ -419,7 +427,7 @@ h2 {
   font-weight: 600;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contato-item::before {
@@ -476,6 +484,8 @@ h2 {
   padding: 14px 20px;
   background: #0b0b0b;
   border-top: 3px solid #1db954;
+  /* ⚡ OTIMIZADO: Hardware acceleration */
+  transform: translateZ(0); 
 }
 
 #radioLogo {
@@ -510,11 +520,13 @@ h2 {
 ===================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px); /* ⚡ Reduzi de 40px para 30px (menor percurso = mais rápido) */
+  /* ⚡ OTIMIZADO: 0.5s é o "sweet spot" de velocidade */
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform; /* ⚡ Segredo da performance */
 }
 
-.reveal.ativo {
+.reveal-active, .reveal.ativo {
   opacity: 1;
   transform: translateY(0);
 }
@@ -527,31 +539,31 @@ h2 {
 
 @keyframes premiumPulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
+  50% { transform: scale(1.02); } /* ⚡ Suavizei o pulso para cansar menos a vista */
   100% { transform: scale(1); }
 }
 
 @keyframes premiumShine {
   0% { transform: translateX(-120%); }
-  60% { transform: translateX(120%); }
+  50% { transform: translateX(120%); } /* ⚡ Acelerei um pouco o loop */
   100% { transform: translateX(120%); }
 }
 
 @keyframes premiumGlow {
   0% { opacity: 0.3; }
-  50% { opacity: 0.8; }
+  50% { opacity: 0.7; }
   100% { opacity: 0.3; }
 }
 
 /* =====================================================
-   responsivo mobile (lapidado para ux)
+   responsivo mobile (lapidado para performance e ux)
 ===================================================== */
 @media (max-width: 768px) {
   
   /* ajuste de estrutura e scroll */
   body {
-    padding-top: 70px; /* navbar menor no mobile */
-    padding-bottom: 140px; /* espaco extra para o player */
+    padding-top: 70px;
+    padding-bottom: 140px;
   }
 
   section {
@@ -559,7 +571,7 @@ h2 {
   }
 
   .container {
-    width: 92%; /* aproveita mais a lateral */
+    width: 92%;
   }
 
   /* navbar e menu */
@@ -573,29 +585,28 @@ h2 {
 
   .menu-btn {
     display: flex;
-    padding: 10px; /* aumenta area de toque */
+    padding: 10px;
   }
 
-  /* menu mobile mais clean */
+  /* ⚡ OTIMIZADO MOBILE: Removi blur pesado e usei cor sólida */
   .mobile-menu {
     top: 70px;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: #080808; /* Melhor que backdrop-filter em celulares fracos */
     border-bottom: 1px solid rgba(255, 212, 0, 0.2);
     padding: 10px 0;
   }
 
   .mobile-menu a {
-    padding: 18px 0; /* area de toque maior */
+    padding: 18px 0;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
-  /* hero section otimizada */
+  /* hero section */
   .hero {
     padding-top: 20px;
-    min-height: 100dvh; /* dvh evita pulo da barra de endereco */
-    align-items: flex-start; /* evita cortar conteudo */
+    min-height: 100dvh;
+    align-items: flex-start;
   }
 
   .hero-content {
@@ -605,7 +616,7 @@ h2 {
   .foto-grupo {
     width: 90%;
     max-width: 280px;
-    margin-top: 0; /* remove margem negativa que quebra layout mobile */
+    margin-top: 0;
     margin-bottom: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   }
@@ -618,7 +629,7 @@ h2 {
   /* textos e videos */
   .sobre-texto {
     font-size: 1rem;
-    text-align: justify; /* melhor leitura em blocos */
+    text-align: justify;
     padding: 0 5px;
   }
 
@@ -636,7 +647,7 @@ h2 {
 
   /* cards e grid */
   .cards {
-    grid-template-columns: 1fr; /* forca coluna unica */
+    grid-template-columns: 1fr;
     gap: 25px;
     padding: 0 10px;
   }
@@ -661,7 +672,6 @@ h2 {
     padding: 5px 40px;
   }
 
-  /* botoes full width para facilitar o clique */
   .btn-primary,
   .btn-whatsapp {
     display: block;
@@ -676,7 +686,7 @@ h2 {
   }
 
   .localizacao-mapa {
-    height: 250px; /* mapa maior para facilitar toque */
+    height: 250px;
   }
 
   /* contato */
@@ -692,9 +702,9 @@ h2 {
     padding: 16px;
   }
 
-  /* radio player ergonomico */
+  /* radio player */
   #radioPlayer {
-    flex-direction: row; /* mantem linha para economizar altura */
+    flex-direction: row;
     flex-wrap: wrap;
     padding: 10px 15px;
     gap: 10px;
@@ -707,7 +717,7 @@ h2 {
   }
 
   .radio-left div span {
-    display: none; /* esconde 'ao vivo' para economizar espaco */
+    display: none;
   }
 
   .radio-right {
@@ -715,10 +725,9 @@ h2 {
     gap: 15px;
   }
 
-  /* slider de volume maior para o dedo */
   #radioVol {
     width: 80px;
-    height: 20px; /* area de toque maior */
+    height: 20px;
   }
 
   #btnPlay {
@@ -726,23 +735,21 @@ h2 {
     height: 42px;
   }
 
-  /* animacoes simplificadas */
+  /* animacoes simplificadas no mobile */
   .reveal {
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* Ainda mais rápido no mobile */
   }
 }
 
 /* =====================================================
-   acessibilidade e performance
+   acessibilidade e performance extrema
 ===================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .card-premium {
+  .card-premium, .reveal, .img-planos {
     animation: none;
-  }
-
-  .card-premium::before,
-  .card-premium::after {
-    animation: none;
+    transition: none;
+    transform: none;
+    opacity: 1;
   }
 }
