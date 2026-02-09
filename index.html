@@ -1,17 +1,17 @@
 ---
 layout: null
 # ==========================================
-# 🎨 APARÊNCIA E CORES (CSS DINÂMICO)
+# 🎨 APARÊNCIA (SELETOR DE CORES)
 # ==========================================
 aparencia:
-  cor_destaque: "#ffd400"  # Cor principal (Amarelo)
-  cor_fundo_topo: "#111111" # Cor do topo do gradiente
-  cor_fundo_base: "#000000" # Cor da base do site
+  cor_destaque: "#ffd400"
+  cor_fundo_topo: "#111111"
+  cor_fundo_base: "#000000"
   cor_texto_claro: "#ffffff"
   cor_texto_escuro: "#000000"
 
 # ==========================================
-# 🖼️ MÍDIA GLOBAL (LOGOS E ÍCONES)
+# 🖼️ MÍDIA GLOBAL (UPLOAD DE IMAGENS)
 # ==========================================
 midia_global:
   logo_principal: "logo_semear.webp"
@@ -85,23 +85,99 @@ localizacao:
   imagem_horario: "horario.webp"
 
 # ==========================================
-# 🛠 CONFIG DO CLOUDCANNON
+# 🛠 CONFIGURAÇÃO AVANÇADA DO CLOUDCANNON
+# Aqui definimos que as cores são paletas e arquivos são uploads
 # ==========================================
 _inputs:
+  # Cores (Paleta Visual)
   aparencia:
     type: object
-    label: "🎨 Cores e Estilo"
+    label: "🎨 Cores do Site"
     options:
       icon: palette
+  aparencia.cor_destaque:
+    type: color
+    label: "Cor Principal (Destaque)"
+  aparencia.cor_fundo_topo:
+    type: color
+    label: "Cor Fundo (Topo)"
+  aparencia.cor_fundo_base:
+    type: color
+    label: "Cor Fundo (Base)"
+  aparencia.cor_texto_claro:
+    type: color
+    label: "Cor Texto (Claro)"
+  aparencia.cor_texto_escuro:
+    type: color
+    label: "Cor Texto (Escuro)"
+
+  # Imagens (Upload)
   midia_global:
     type: object
     label: "🖼️ Logos e Ícones"
     options:
       icon: image
+  midia_global.logo_principal:
+    type: image
+    label: "Logo Principal"
+  midia_global.logo_radio:
+    type: image
+    label: "Logo da Rádio"
+  midia_global.icone_whatsapp:
+    type: image
+  midia_global.icone_instagram:
+    type: image
+  midia_global.favicon:
+    type: image
+    label: "Ícone da Aba (Favicon)"
+
+  # Hero (Banner)
   hero:
     type: object
+    label: "🏠 Topo (Hero)"
     options:
       icon: home
+  hero.imagem:
+    type: image
+    label: "Foto de Capa"
+  
+  # Vídeos (Upload de Arquivo)
+  sobre:
+    type: object
+    label: "📖 Sobre Nós"
+    options:
+      icon: info
+  sobre.video_1:
+    type: file
+    label: "Vídeo Sobre 1"
+  sobre.video_2:
+    type: file
+    label: "Vídeo Sobre 2"
+
+  # Estrutura
+  estrutura:
+    type: object
+    label: "💪 Estrutura"
+    options:
+      icon: fitness_center
+  estrutura.video:
+    type: file
+    label: "Vídeo da Estrutura"
+  
+  # Planos e Horários
+  planos:
+    type: object
+    label: "💰 Planos e Preços"
+    options:
+      icon: local_offer
+  planos.imagem_horarios:
+    type: image
+    label: "Imagem da Grade de Horários"
+  
+  # Localização
+  localizacao.imagem_horario:
+    type: image
+    label: "Imagem Menor de Horário"
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -144,7 +220,7 @@ _inputs:
       color: {{ page.aparencia.cor_texto_escuro }} !important; 
     }
     
-    .card { border-color: rgba(255, 212, 0, 0.3); } /* Mantem borda sutil, ou pode usar var(--cor-destaque) */
+    .card { border-color: rgba(255, 212, 0, 0.3); } 
     .card.destaque { 
       background: var(--cor-destaque) !important; 
       color: {{ page.aparencia.cor_texto_escuro }} !important; 
