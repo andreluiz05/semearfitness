@@ -1,0 +1,9 @@
+# Normalização de fim de linha
+* text=auto eol=lf
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
+*.mp4 binary
