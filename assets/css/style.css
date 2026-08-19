@@ -713,11 +713,13 @@ h2 {
   }
 
   .hero-content picture {
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 100%;
   }
 
   .foto-grupo {
+    display: block;
     width: 90%;
     max-width: 320px;
     margin: 0 auto 30px;
